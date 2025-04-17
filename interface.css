@@ -1,0 +1,245 @@
+/* Reset default browser styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.blue{
+    color: #4F9CF9;
+}
+
+/* Fullscreen container */
+body, html {
+    height: 100%;
+    font-family: "Roboto",'Arial', sans-serif;
+    overflow-y: hidden;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(to bottom right, #f0f4ff, #dff0ea);
+}
+
+/* Navbar Style */
+.navbar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #fff;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    z-index: 1000;
+}
+
+.navbar .logo a{
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #4F9CF9;
+    text-decoration: none;
+}
+
+.navbar .login-btn button {
+    padding: 10px 20px;
+    background-color: #4F9CF9;
+    color: white;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: 0.3s ease-in-out;
+}
+
+.navbar .login-btn button a{
+    font-weight: bold;
+    color: white;
+    text-decoration: none;}
+
+.navbar .login-btn button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Main content container */
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    color: #1e1e1e;
+    height: 100vh;
+    width: 100%;
+    padding-top: 80px; /* Space for the fixed navbar */
+}
+
+.content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+h1 {
+    font-size: 3rem;
+    margin-bottom: 1rem;
+    font-weight: bold;
+}
+
+p {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+.cta-button {
+    background-color: #4F9CF9;
+    color: white;
+    padding: 15px 30px;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+.cta-button:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.icons {
+    display: flex;
+    gap: 20px;
+    font-size: 3rem;
+    margin-top: 2rem;
+    animation: floatIcons 6s infinite ease-in-out;
+}
+
+.icons span {
+    animation: iconAnimation 3s infinite alternate;
+}
+
+/* Animation for floating icons */
+@keyframes floatIcons {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+@keyframes iconAnimation {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* popup for when user clikcs start matching!! */
+
+/* Modal Styles */
+/* Modal base */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 999;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+  }
+  
+  /* Modal content box */
+  .modal-content {
+    background: #ffffffcc;
+    backdrop-filter: blur(10px);
+    border-radius: 16px;
+    padding: 30px 25px;
+    width: 90%;
+    max-width: 400px;
+    margin: 8% auto;
+    animation: popup 0.3s ease;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    font-family:  "Roboto",'Segoe UI', sans-serif;
+  }
+  
+  /* Modal animation */
+  @keyframes popup {
+    from {
+      transform: translateY(-20px);
+      opacity: 0;
+    }
+    to {
+      transform: translateY(0);
+      opacity: 1;
+    }
+  }
+  
+  /* Close button */
+  .close {
+    position: absolute;
+    top: 0;
+    right: 11px;
+    font-size: 28px;
+    cursor: pointer;
+    color: #555;
+  }
+  
+  /* Headline */
+  .modal-content h2 {
+    font-size: 22px;
+    margin-bottom: 20px;
+    color: #222;
+  }
+  
+  .fieldBox{
+    display: none;
+  }
+
+  .subBox{
+    display: none;
+  }
+  
+  /* Labels */
+  .modal-content label {
+    display: block;
+    text-align: left;
+    margin: 10px 0 5px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  /* Select Dropdowns */
+  .modal-content select {
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    background-color: #f9f9f9;
+    margin-bottom: 10px;
+    transition: border-color 0.2s ease;
+  }
+  
+  .modal-content select:focus {
+    outline: none;
+    border-color: #4F9CF9;
+  }
+  
+  /* Button */
+  .modal-content button {
+    background-color: #4F9CF9;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-top: 10px;
+    transition: background-color 0.2s ease;
+  }
+  
+  .modal-content button:hover {
+    background-color: #3b84e7;
+  }
+  
